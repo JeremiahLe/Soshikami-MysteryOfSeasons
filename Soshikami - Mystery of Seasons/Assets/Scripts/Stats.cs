@@ -17,7 +17,7 @@ public class Stats : MonoBehaviour
     public static int maxexp = 10;
 
     public static float playerDamage = 6f;
-    public static float playerAtkSpeed = 1f;
+    public static float playerAtkSpeed = .3f;
 
     // Movement related variables
     public static float playerWalkSpeed = 6f;

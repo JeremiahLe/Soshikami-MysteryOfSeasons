@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private bool facingRight = true;
+    public static bool playerFacingRight = true;
 
     public Rigidbody2D rb;
 
@@ -25,20 +25,20 @@ public class Movement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * Stats.playerWalkSpeed * Time.fixedDeltaTime);
 
-        if (facingRight == false && movement.x > 0)
+        if (playerFacingRight == false && movement.x > 0 && AttackScript.shooting != true)
         {
             Flip();
         }
-        else if (facingRight == true && movement.x < 0)
+        else if (playerFacingRight == true && movement.x < 0 && AttackScript.shooting != true)
         {
             Flip();
         }
     }
 
     // flipping the character's sprite
-    void Flip()
+    public void Flip()
     {
-        facingRight = !facingRight;
+        playerFacingRight = !playerFacingRight;
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
