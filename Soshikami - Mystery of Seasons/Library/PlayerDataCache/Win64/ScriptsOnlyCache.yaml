@@ -11,13 +11,16 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -51,19 +54,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9242}
+      Script: {instanceID: 606}
     - Class: 114
-      Script: {instanceID: 9632}
+      Script: {instanceID: 9244}
     - Class: 114
-      Script: {instanceID: 9764}
+      Script: {instanceID: 9328}
     - Class: 114
-      Script: {instanceID: 10250}
+      Script: {instanceID: 9334}
     - Class: 114
-      Script: {instanceID: 10340}
+      Script: {instanceID: 9340}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 9384}
     - Class: 114
-      Script: {instanceID: 14934}
+      Script: {instanceID: 9634}
+    - Class: 114
+      Script: {instanceID: 9766}
+    - Class: 114
+      Script: {instanceID: 10038}
+    - Class: 114
+      Script: {instanceID: 10254}
+    - Class: 114
+      Script: {instanceID: 10344}
+    - Class: 114
+      Script: {instanceID: 10522}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -71,6 +84,16 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -609,6 +632,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: c3fc60fc2fb6b3ac86a6b3789bf76db9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PositionRenderSorter
+  - hash:
+      serializedVersion: 2
       Hash: 3f8d7b92a6be3c715e55d5cfa7cc8384
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -699,7 +728,7 @@ ScriptsOnlyBuild:
     className: CameraScript
   - hash:
       serializedVersion: 2
-      Hash: ba5235dd2f042842cd358adf1f0991b2
+      Hash: 6f838a5055504828b772cba4f1db4c80
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttackScript
@@ -751,12 +780,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 05cede3f915399cac147f9e5eea79328
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PositionRenderSorter
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

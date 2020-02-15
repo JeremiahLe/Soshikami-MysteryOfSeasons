@@ -8,7 +8,7 @@ public class PositionRenderSorter : MonoBehaviour
     private int sortingOrderBase = 5000;
     private Renderer myRenderer;
     [SerializeField]
-    private int offset = 0;
+    private float offset = 0;
     [SerializeField]
     private bool runOnlyOnce = false;
 

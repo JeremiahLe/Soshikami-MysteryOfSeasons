@@ -8,6 +8,8 @@ public class AttackScript : MonoBehaviour
     public Transform target;
     private Vector3 targetShoot;
 
+    public AudioClip attackEffect;
+
     public Vector2 projectileVelocity;
 
     public Camera cam;
@@ -37,6 +39,7 @@ public class AttackScript : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
+                //AudioSource.PlayClipAtPoint(attackEffect, transform.position);
                 shooting = true;
                 float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
