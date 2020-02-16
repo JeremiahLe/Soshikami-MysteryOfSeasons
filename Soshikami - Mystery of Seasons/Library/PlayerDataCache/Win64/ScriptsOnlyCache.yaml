@@ -11,8 +11,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -554,7 +556,7 @@ ScriptsOnlyBuild:
     className: CursorScript
   - hash:
       serializedVersion: 2
-      Hash: d3295156e4ab7fc8554b6064de102cdc
+      Hash: c7ceb5bc1d8de3cc433015c64a107ac8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProjectileScript
@@ -728,7 +730,7 @@ ScriptsOnlyBuild:
     className: CameraScript
   - hash:
       serializedVersion: 2
-      Hash: 6f838a5055504828b772cba4f1db4c80
+      Hash: 670a6c502267aad6482362484966913b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttackScript
@@ -746,7 +748,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 95c5355b33e511dee54f3f72dd36f2bb
+      Hash: 1552ae579fb2e60fb741b4940e8ca296
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreatureScript

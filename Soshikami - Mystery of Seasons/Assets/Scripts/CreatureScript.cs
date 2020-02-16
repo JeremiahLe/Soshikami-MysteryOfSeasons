@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class CreatureScript : MonoBehaviour
 {
+    // general stats
+    [SerializeField]
+    private enum NPCType {docileNPC, neutralNPC, enemyNPC }
+    private enum Element { Fire, Water, Wind, Earth, Lightning, Dark, Light}
+    private enum Status { Poisoned, Burning, Slowed, Stunned, Cursed, Immune }
+    [SerializeField]
+    public float health;
+
+    public int attack;
+    public int physicalDefense;
+    public int magicalDefense;
+
+
+
     // movement stats
     public float speed;
     private float waitTime;
@@ -67,4 +81,12 @@ public class CreatureScript : MonoBehaviour
         transform.localScale = Scaler;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8) // Projectile
+        {
+            GameObject projectile = collision.gameObject;
+            //health -= projectile.GetComponent<ProjectileScript>().damage
+        }
+    }
 }

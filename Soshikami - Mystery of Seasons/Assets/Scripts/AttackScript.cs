@@ -8,8 +8,6 @@ public class AttackScript : MonoBehaviour
     public Transform target;
     private Vector3 targetShoot;
 
-    public AudioClip attackEffect;
-
     public Vector2 projectileVelocity;
 
     public Camera cam;
@@ -18,6 +16,8 @@ public class AttackScript : MonoBehaviour
 
     public float playerProjectileSpeed = 6.5f;
     public float playerProjectileLifespan = .9f;
+    public float playerAttack = 5f;
+
     public bool canAttack = true;
     public static bool shooting = false;
 
@@ -39,13 +39,12 @@ public class AttackScript : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
-                //AudioSource.PlayClipAtPoint(attackEffect, transform.position);
                 shooting = true;
                 float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
                 direction.Normalize();
-                canAttack = false;
                 FireProjectile(direction, rotationZ);
+                canAttack = false;
             }
             else
             {
@@ -62,18 +61,20 @@ public class AttackScript : MonoBehaviour
             }
 
         }
-
-
     }
 
     void FireProjectile(Vector2 direction, float rotationZ)
     {
         GameObject projectile = Instantiate(attackProjectile) as GameObject;
+
         projectile.transform.position = target.transform.position;
         projectile.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+
         projectile.GetComponent<Rigidbody2D>().velocity = direction * playerProjectileSpeed * (playerProjectileSpeed/2);
         projectileVelocity = projectile.GetComponent<Rigidbody2D>().velocity;
+
         projectile.GetComponent<ProjectileScript>().projectileLifespan = playerProjectileLifespan;
+        projectile.GetComponent<ProjectileScript>().damage = playerAttack;
 
         bool orientation = Movement.playerFacingRight;
 
