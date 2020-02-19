@@ -29,6 +29,7 @@ public class ProjectileScript : MonoBehaviour
         if (collision.gameObject.CompareTag("DestroyProjectile"))
         {
             Destroy(gameObject);
+            //
         }
 
        

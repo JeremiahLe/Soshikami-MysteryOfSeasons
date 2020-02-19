@@ -16,8 +16,6 @@ public class CreatureScript : MonoBehaviour
     public int physicalDefense;
     public int magicalDefense;
 
-
-
     // movement stats
     public float speed;
     private float waitTime;
@@ -38,12 +36,16 @@ public class CreatureScript : MonoBehaviour
     {
         randomSpot = Random.Range(0, moveSpots.Length);
 
+        SpriteRenderer spriteColor = GetComponent<SpriteRenderer>();
+
         //moveSpots.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckHealth();
+
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
@@ -86,7 +88,26 @@ public class CreatureScript : MonoBehaviour
         if (collision.gameObject.layer == 8) // Projectile
         {
             GameObject projectile = collision.gameObject;
-            //health -= projectile.GetComponent<ProjectileScript>().damage
+            health -= projectile.GetComponent<ProjectileScript>().damage;
+            spriteColor.color = Color.red;
+            Invoke("ChangeColor", 2);
+
         }
     }
+
+    void CheckHealth()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void ChangeColor()
+    {
+        spriteColor.color = Color.white;
+
+    }
+
 }
+
