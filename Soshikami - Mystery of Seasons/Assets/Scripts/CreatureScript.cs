@@ -11,6 +11,9 @@ public class CreatureScript : MonoBehaviour
     enum State { Wander, Patrol, Attack }
 
     [SerializeField]
+    private State currentState;
+
+    [SerializeField]
     // Combat Stats
     public float health;
     public int attack;
@@ -43,6 +46,9 @@ public class CreatureScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set default state - Can be done in the inspector
+        //currentState = State.Patrol;
+
         // Set the next position in the array to move to
         randomSpot = Random.Range(0, moveSpots.Length);
 
@@ -57,10 +63,23 @@ public class CreatureScript : MonoBehaviour
         // Check if dead
         CheckHealth();
 
-        switch (currentState)
-     
-    }
+        
+        // Switch statement for checking current NPC state
+       switch (currentState)
+       {
+            case State.Patrol:
+                PatrolState();
+                break;
 
+            case State.Attack:
+                AttackState();
+                break;
+
+            case State.Wander:
+                WanderState();
+                break;
+       }
+    }
 
     // Flip Function for changing sprite orientation
     void Flip()
@@ -72,7 +91,7 @@ public class CreatureScript : MonoBehaviour
     }
 
     // Collision checking with Player Projectile
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8) // Projectile
         {
@@ -81,6 +100,8 @@ public class CreatureScript : MonoBehaviour
             //spriteColor.color = Color.red;
             Invoke("ChangeColor", 2);
         }
+        else
+        return;
     }
 
     // Check Health to make sure if Dead
@@ -128,6 +149,7 @@ public class CreatureScript : MonoBehaviour
             }
             else
             {
+                // Reset timer till next movement
                 waitTime -= Time.deltaTime;
             }
         }
