@@ -55,6 +55,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 606}
     - Class: 114
@@ -556,7 +558,7 @@ ScriptsOnlyBuild:
     className: CursorScript
   - hash:
       serializedVersion: 2
-      Hash: c7ceb5bc1d8de3cc433015c64a107ac8
+      Hash: 4466f116db43b799baef0a563805c997
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProjectileScript
@@ -748,7 +750,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 1552ae579fb2e60fb741b4940e8ca296
+      Hash: 48101a35e41dea7443a32970e333ffbb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreatureScript
